@@ -10004,6 +10004,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.ck-editor__editable_inline {
+  min-height: 250px;
+}
+
 .has-search .form-control {
   padding-left: 2.375rem;
 }

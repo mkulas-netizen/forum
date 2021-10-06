@@ -2,37 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class SlugController extends Controller
+class TagController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
@@ -40,13 +16,17 @@ class SlugController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Tag  $slug
-     * @return \Illuminate\Http\Response
      */
-    public function show(Tag $slug)
+    public function show(Tag $tag)
     {
-        //
+
+
+       $articles =  Article::whereHas('tag', function($query) use ($tag) {
+            $query->where('id' ,$tag->id);
+        })->paginate(10);
+
+
+        return view('pages.home',compact('articles'),['tags' => Tag::get()]);
     }
 
     /**

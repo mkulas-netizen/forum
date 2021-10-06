@@ -7,7 +7,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title"><b>{{ $article->title }}</b></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Autor : {{ $article->user->name }}</h6>
-                        <p class="card-text">{{ $article->text }}</p>
+                        <section class="card-text">{!!  $article->text !!}</section>
                         <div class="text-right">
                             <small
                                 class="text-right">Vytvorené: {{ date(' H:i:s , d-M-Y', strtotime($article->created_at)) }}</small><br>
@@ -70,9 +70,6 @@
             .catch(error => {
                 console.error(error);
             });
-
-
-
     </script>
 
 

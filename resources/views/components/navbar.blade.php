@@ -7,7 +7,7 @@
         <div class="navbar-nav">
             @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/home') }}" class="nav-item nav-link">Home</a>
+                    <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
                     <a class="nav-item nav-link" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -22,6 +22,7 @@ class Article extends Model
 
         self::creating(function ($model) {
             $model->user_id = Auth::user()->id;
+            $model->tag_id = 1;
             return $model;
         });
 
@@ -38,7 +39,6 @@ class Article extends Model
     }
 
 
-
     public function user(): HasOne
     {
         return $this->hasOne(User::class,'id','user_id');
@@ -51,5 +51,10 @@ class Article extends Model
 
     public function comments(){
         return $this->belongsTo(Comment::class);
+    }
+
+    public function tagArticle()
+    {
+        return $this->belongsToMany(TagArticle::class);
     }
 }

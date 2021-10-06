@@ -13,7 +13,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
         "laravelium/feed": "^8.0",
-        "roumen/feed": "^8.0"
+        "roumen/feed": "^7.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

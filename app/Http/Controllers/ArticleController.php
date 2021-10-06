@@ -12,7 +12,6 @@ class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
-
      */
     public function index()
     {
@@ -22,23 +21,40 @@ class ArticleController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+
+        return view('pages.add_article',['tags' => Tag::all()]);
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string',
+            'text' => 'required|string'
+        ]);
+
+        $article = Article::create([
+            'text' => $request->text,
+            'title' => $request->title
+        ]);
+
+
+
+        foreach ($request->input('tag') as $item) {
+
+            TagArticle::create([
+                'tag_id' => $item,
+                'article_id' => $article->id
+            ]);
+        }
+
+        return redirect('/');
     }
 
     /**
