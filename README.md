@@ -29,3 +29,4 @@ vyhladavanie v zaznamoch vsetky parametre len pomocou js
 login 
 ak je uzivatel prihlaseny moze vytvárat nové 
 rss som uz nestihol 
+vymazaním príspevku sa zmazu aj vsetky comentáre

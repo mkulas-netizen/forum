@@ -4,6 +4,15 @@
         <div class="row">
             <div class="col-12">
                 <div class="card" style="">
+                    @auth()
+                        <form method="post" action="{{ route('article.destroy',$article) }}">
+                            @csrf
+                            @method('DELETE')
+                            <div class="text-right float-right">
+                                <button type="submit" class="btn btn-danger m-2">DELETE</button>
+                            </div>
+                        </form>
+                    @endauth
                     <div class="card-body text-center">
                         <h5 class="card-title"><b>{{ $article->title }}</b></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Autor : {{ $article->user->name }}</h6>
@@ -36,21 +45,21 @@
                         </form>
                     </div>
                     @endauth
-
                     @if(count($comments) > 0)
                         @foreach($comments as $comment)
                             <div class="card">
-                                @auth()
-                                    <form method="post" action="{{ route('comment.destroy',$comment) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-dark">DELETE</button>
-                                    </form>
-                                @endauth
-                                <div class="card-header">
 
-
-                                    <cite title="Source Title">{{ $comment->user->name }}</cite>
+                                <div class="card-header clearfix ">
+                                    <cite class="float-left" title="Source Title">{{ $comment->user->name }}</cite>
+                                    @auth()
+                                        <form method="post" action="{{ route('comment.destroy',$comment) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <div class="text-right float-right">
+                                                <button type="submit" class="btn btn-danger m-2">DELETE</button>
+                                            </div>
+                                        </form>
+                                    @endauth
                                 </div>
                                 <div class="card-body">
                                     <section class="card-text">{!! $comment->comment !!} </section>
