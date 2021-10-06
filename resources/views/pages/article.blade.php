@@ -5,13 +5,17 @@
             <div class="col-12">
                 <div class="card" style="">
                     @auth()
-                        <form method="post" action="{{ route('article.destroy',$article) }}">
-                            @csrf
-                            @method('DELETE')
-                            <div class="text-right float-right">
-                                <button type="submit" class="btn btn-danger m-2">DELETE</button>
-                            </div>
-                        </form>
+                        <div class="clearfix">
+                            <form method="post" action="{{ route('article.destroy',$article) }}">
+                                @csrf
+                                @method('DELETE')
+                                <div class="text-right float-right">
+                                    <button type="submit" class="btn btn-danger m-2">DELETE</button>
+                                </div>
+                            </form>
+                            <a href="{{ route('article.edit',$article) }}" class="btn  btn-dark m-2">Edit</a>
+                        </div>
+
                     @endauth
                     <div class="card-body text-center">
                         <h5 class="card-title"><b>{{ $article->title }}</b></h5>

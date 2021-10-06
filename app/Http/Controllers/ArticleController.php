@@ -74,6 +74,27 @@ class ArticleController extends Controller
         );
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Article $article)
+    {
+        return view('pages.add_article',['tags' => Tag::all(),'article' => $article]);
+    }
+
+    public function update(Article $article,Request $request){
+        $request->validate([
+            'title' => 'string',
+            'text' => 'string'
+        ]);
+
+        $article->update([
+            'title' => $request->title,
+            'text' => $request->text
+        ]);
+
+        return redirect('/');
+    }
 
     /**
      * Remove the specified resource from storage.
