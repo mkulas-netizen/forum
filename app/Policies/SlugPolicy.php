@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Slug;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class SlugPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Slug $slug)
+    public function view(User $user, Tag $slug)
     {
         //
     }
@@ -48,10 +48,10 @@ class SlugPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Slug $slug)
+    public function update(User $user, Tag $slug)
     {
         //
     }
@@ -60,10 +60,10 @@ class SlugPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Slug $slug)
+    public function delete(User $user, Tag $slug)
     {
         //
     }
@@ -72,10 +72,10 @@ class SlugPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Slug $slug)
+    public function restore(User $user, Tag $slug)
     {
         //
     }
@@ -84,10 +84,10 @@ class SlugPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Slug $slug)
+    public function forceDelete(User $user, Tag $slug)
     {
         //
     }

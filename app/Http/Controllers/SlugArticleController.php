@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SlugArticle;
+use App\Models\TagArticle;
 use Illuminate\Http\Request;
 
 class SlugArticleController extends Controller
@@ -41,10 +41,10 @@ class SlugArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Http\Response
      */
-    public function show(SlugArticle $slugArticle)
+    public function show(TagArticle $slugArticle)
     {
         //
     }
@@ -52,10 +52,10 @@ class SlugArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Http\Response
      */
-    public function edit(SlugArticle $slugArticle)
+    public function edit(TagArticle $slugArticle)
     {
         //
     }
@@ -64,10 +64,10 @@ class SlugArticleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SlugArticle $slugArticle)
+    public function update(Request $request, TagArticle $slugArticle)
     {
         //
     }
@@ -75,10 +75,10 @@ class SlugArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SlugArticle $slugArticle)
+    public function destroy(TagArticle $slugArticle)
     {
         //
     }

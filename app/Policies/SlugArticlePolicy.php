@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\SlugArticle;
+use App\Models\TagArticle;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class SlugArticlePolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, SlugArticle $slugArticle)
+    public function view(User $user, TagArticle $slugArticle)
     {
         //
     }
@@ -48,10 +48,10 @@ class SlugArticlePolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, SlugArticle $slugArticle)
+    public function update(User $user, TagArticle $slugArticle)
     {
         //
     }
@@ -60,10 +60,10 @@ class SlugArticlePolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, SlugArticle $slugArticle)
+    public function delete(User $user, TagArticle $slugArticle)
     {
         //
     }
@@ -72,10 +72,10 @@ class SlugArticlePolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, SlugArticle $slugArticle)
+    public function restore(User $user, TagArticle $slugArticle)
     {
         //
     }
@@ -84,10 +84,10 @@ class SlugArticlePolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\SlugArticle  $slugArticle
+     * @param  \App\Models\TagArticle  $slugArticle
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, SlugArticle $slugArticle)
+    public function forceDelete(User $user, TagArticle $slugArticle)
     {
         //
     }

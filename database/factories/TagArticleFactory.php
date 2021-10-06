@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\SlugArticle;
+use App\Models\TagArticle;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SlugArticleFactory extends Factory
+class TagArticleFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = SlugArticle::class;
+    protected $model = TagArticle::class;
 
     /**
      * Define the model's default state.

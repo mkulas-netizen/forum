@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Slug;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class SlugController extends Controller
@@ -41,10 +41,10 @@ class SlugController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show(Slug $slug)
+    public function show(Tag $slug)
     {
         //
     }
@@ -52,10 +52,10 @@ class SlugController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Http\Response
      */
-    public function edit(Slug $slug)
+    public function edit(Tag $slug)
     {
         //
     }
@@ -64,10 +64,10 @@ class SlugController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slug $slug)
+    public function update(Request $request, Tag $slug)
     {
         //
     }
@@ -75,10 +75,10 @@ class SlugController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Slug  $slug
+     * @param  \App\Models\Tag  $slug
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slug $slug)
+    public function destroy(Tag $slug)
     {
         //
     }
