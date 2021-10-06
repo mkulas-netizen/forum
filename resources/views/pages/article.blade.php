@@ -40,7 +40,16 @@
                     @if(count($comments) > 0)
                         @foreach($comments as $comment)
                             <div class="card">
+                                @auth()
+                                    <form method="post" action="{{ route('comment.destroy',$comment) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-dark">DELETE</button>
+                                    </form>
+                                @endauth
                                 <div class="card-header">
+
+
                                     <cite title="Source Title">{{ $comment->user->name }}</cite>
                                 </div>
                                 <div class="card-body">

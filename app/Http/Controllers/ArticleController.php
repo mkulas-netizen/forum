@@ -45,13 +45,14 @@ class ArticleController extends Controller
         ]);
 
 
+        if ($request->input('tag') != null) {
+            foreach ($request->input('tag') as $item) {
 
-        foreach ($request->input('tag') as $item) {
-
-            TagArticle::create([
-                'tag_id' => $item,
-                'article_id' => $article->id
-            ]);
+                TagArticle::create([
+                    'tag_id' => $item,
+                    'article_id' => $article->id
+                ]);
+            }
         }
 
         return redirect('/');
