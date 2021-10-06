@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\RssController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',[ArticleController::class,'index']);
 Route::resource('article',ArticleController::class);
-
+Route::resource('comment',CommentController::class);
+Route::get('rss',[RssController::class,'rssFeed']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

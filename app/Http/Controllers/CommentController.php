@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use Illuminate\Http\Request;
-
+use Illuminate\Http\RedirectResponse;
 class CommentController extends Controller
 {
     /**
@@ -29,13 +29,20 @@ class CommentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $request->validate([
+            'comment' => 'required|string|min:2',
+            'article_id' => 'required|integer'
+        ]);
+
+        Comment::create([
+            'comment' => $request->comment,
+            'article_id' => $request->article_id
+        ]);
+
+        return redirect()->back();
     }
 
     /**

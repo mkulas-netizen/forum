@@ -22,7 +22,8 @@
                     <th scope="col">Akcia</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="article">
+                @if(count($articles) > 0)
                 @foreach($articles as $article)
                 <tr>
                     <th scope="row">{{ $article->title }}</th>
@@ -32,8 +33,15 @@
                     <td><a href="{{ route('article.show',$article) }}">Zobraziť</a> </td>
                 </tr>
                 @endforeach
+                @endif
                 </tbody>
             </table>
+            <div class="d-flex justify-content-center">
+                {!! $articles->links('pagination::bootstrap-4') !!}
+            </div>
         </div>
     </div>
+
+
+
 @endsection

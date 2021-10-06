@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Comment;
 use App\Models\Tag;
+use App\Models\TagArticle;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -14,7 +16,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('pages.home',['tags' => Tag::get(),'articles' => Article::get()]);
+        $articles = Article::paginate(10);
+        return view('pages.home',compact('articles'),['tags' => Tag::get()]);
     }
 
     /**
@@ -40,13 +43,18 @@ class ArticleController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Article  $article
-     * @return \Illuminate\Http\Response
      */
     public function show(Article $article)
     {
-        //
+        $comments = Comment::where('article_id',$article->id)->paginate(1);
+
+        return view('pages.article',
+            compact('comments'),
+            [
+                'article' => $article,
+                'tags' => TagArticle::with('tag')->where('article_id',$article->id)->get()
+            ]
+        );
     }
 
     /**

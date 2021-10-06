@@ -8,6 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('package/font/css/all.css') }}">
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
 </head>
 <body>
