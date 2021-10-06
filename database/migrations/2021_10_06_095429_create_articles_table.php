@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->integer('tag_id');
             $table->integer('user_id');
             $table->string('title');
-            $table->string('text');
+            $table->text('text');
             $table->timestamps();
         });
     }

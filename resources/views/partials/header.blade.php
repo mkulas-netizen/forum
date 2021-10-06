@@ -7,5 +7,7 @@
     <title>Forum</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('package/font/css/all.css') }}">
+
 </head>
 <body>
